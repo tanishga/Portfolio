@@ -1,0 +1,634 @@
+/* =====================================================
+   RPT Portfolio
+   Designed & Developed by Tanishga Ravikumar Priya
+   ===================================================== */
+
+
+/* =====================================================
+   ROOT VARIABLES
+   ===================================================== */
+
+:root {
+
+    /* Colors */
+
+    --background: #09090B;
+    --surface: #111827;
+    --surface-light: #1F2937;
+
+    --primary-text: #F9FAFB;
+    --secondary-text: #9CA3AF;
+
+    --accent: #3B82F6;
+    --accent-hover: #2563EB;
+
+    --border-color: rgba(255, 255, 255, 0.08);
+
+    /* Fonts */
+
+    --heading-font: "Space Grotesk", sans-serif;
+    --body-font: "Inter", sans-serif;
+
+    /* Layout */
+
+    --container-width: 1200px;
+    --border-radius: 18px;
+
+    /* Animation */
+
+    --transition: 0.35s ease;
+
+}
+
+
+/* =====================================================
+   CSS RESET
+   ===================================================== */
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+/* =====================================================
+   HTML
+   ===================================================== */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+/* =====================================================
+   BODY
+   ===================================================== */
+
+body {
+
+    background: var(--background);
+
+    color: var(--primary-text);
+
+    font-family: var(--body-font);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================================
+   SELECTION
+   ===================================================== */
+
+::selection {
+
+    background: var(--accent);
+    color: white;
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+   ===================================================== */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #0d0d10;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #2b2b31;
+
+    border-radius: 50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--accent);
+
+}
+
+
+/* =====================================================
+   LINKS
+   ===================================================== */
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+/* =====================================================
+   LISTS
+   ===================================================== */
+
+ul {
+
+    list-style: none;
+
+}
+
+
+/* =====================================================
+   IMAGES
+   ===================================================== */
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    font: inherit;
+
+}
+
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.container {
+
+    width: min(90%, var(--container-width));
+
+    margin: auto;
+
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+
+    font-family: var(--heading-font);
+
+    line-height: 1.2;
+
+}
+
+h1 {
+
+    font-size: clamp(3rem, 7vw, 5.5rem);
+
+}
+
+h2 {
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+}
+
+p {
+
+    color: var(--secondary-text);
+
+    font-size: 1rem;
+
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+body {
+
+    background-color: var(--background);
+
+    background-image:
+
+        radial-gradient(circle at top right,
+            rgba(59, 130, 246, 0.15),
+            transparent 35%),
+
+        linear-gradient(
+            rgba(255,255,255,0.03) 1px,
+            transparent 1px),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.03) 1px,
+            transparent 1px);
+
+    background-size:
+
+        cover,
+        50px 50px,
+        50px 50px;
+
+    background-position:
+
+        center,
+        center,
+        center;
+
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.header{
+
+    position: fixed;
+
+    width:100%;
+
+    top:0;
+
+    left:0;
+
+    z-index:1000;
+
+    backdrop-filter: blur(18px);
+
+    background: rgba(9,9,11,0.75);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:70px;
+
+}
+
+.logo{
+
+    font-family:var(--heading-font);
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    gap:2rem;
+
+}
+
+.nav-menu a{
+
+    color:var(--secondary-text);
+
+    transition:0.3s;
+
+}
+
+.nav-menu a:hover{
+
+    color:var(--primary-text);
+
+}
+
+.menu-btn{
+
+    display:none;
+
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:120px 0 60px;
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:4rem;
+
+    align-items:center;
+
+}
+
+.hero-tag{
+
+    color:var(--accent-blue);
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+    letter-spacing:1px;
+
+}
+
+.hero h1{
+
+    margin-bottom:1.5rem;
+
+}
+
+.hero-description{
+
+    max-width:520px;
+
+    font-size:1.1rem;
+
+    margin-bottom:2rem;
+
+}
+
+/* =====================================================
+   FEATURED PROJECTS
+===================================================== */
+
+.section-heading{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 60px;
+
+}
+
+.section-tag{
+
+    color:var(--accent-blue);
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+}
+
+.section-description{
+
+    margin-top:20px;
+
+}
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+
+.project-card{
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:0.35s;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(59,130,246,.4);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.project-card h3{
+
+    margin:18px 0;
+
+}
+
+.tech-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:25px 0;
+
+}
+
+.tech-stack span{
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    background:rgba(59,130,246,.12);
+
+    color:white;
+
+    font-size:.9rem;
+
+}
+
+.status{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+}
+
+.progress{
+
+    background:#1e3a8a;
+
+}
+
+.research{
+
+    background:#14532d;
+
+}
+
+.project-links a{
+
+    color:var(--accent-blue);
+
+    font-weight:600;
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:1rem;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    transition:0.35s;
+
+    font-weight:600;
+
+}
+
+.btn-primary{
+
+    background:var(--accent-blue);
+
+    color:white;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--accent-blue-hover);
+
+    transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+    border:1px solid rgba(255,255,255,0.15);
+
+}
+
+.btn-secondary:hover{
+
+    background:rgba(255,255,255,0.05);
+
+}
+
+/* =====================================================
+   HERO CIRCLE
+===================================================== */
+
+.hero-circle{
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:5rem;
+
+    font-weight:700;
+
+    font-family:var(--heading-font);
+
+    color:white;
+
+    background:radial-gradient(circle,
+    rgba(59,130,246,0.35),
+    rgba(59,130,246,0.05));
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+
+    0 0 80px rgba(59,130,246,.25);
+
+}
+
