@@ -2,11 +2,11 @@
 
 This is my personal portfolio where I have my projects, research papers, 
 certifications and what I am learning as I begin my journey 
-in Electrical and Electronics Engineering.
+in Electrical and Electronic Engineering.
 
 # About 
 
-I am an incoming Electrical and Electronics Engineering student interested in renewable energy, electronics, software, artificial intelligence, and sustainable technology.
+I am an incoming Electrical and Electronic Engineering student interested in renewable energy, electronics, software, artificial intelligence, and sustainable technology.
 
 # Projects
 
